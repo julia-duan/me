@@ -1,109 +1,161 @@
-body {
-    background-color: beige;
-    color: navy;
-    font-family: 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    font-weight: 500;
+html, body {
+  background-color: rgb(230, 225, 215);
+  color: navy;
+  font-family: 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-weight: 500;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  overflow: hidden;
 }
 
-.gradient-title {
-    background-image: linear-gradient(to right, navy, rgb(97, 120, 171), rgb(97, 120, 171));
-    -webkit-background-clip: text;
-    color: transparent;
-    transition: font-size 0.3s ease;
-    margin-bottom: 1rem;
-    font-size: 2.7rem;
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  padding: 1rem;
+  box-sizing: border-box;
+  overflow: hidden;
 }
 
-.hover {
-    position: relative;
-    color: grey;
+.content {
+  max-width: 700px;
+  width: 100%;
 }
 
-.small .hover, footer .hover {
-    position: relative;
-    color: navy;
+.title {
+  background-image: linear-gradient(to right, navy, rgb(97, 120, 171), rgb(97, 120, 171));
+  -webkit-background-clip: text;
+  color: transparent;
+  font-size: 3.7rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+  line-height: 1.2;
 }
 
-.hover::before {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 0;
-    height: 2px;
-    background-color: rgb(97, 120, 171);
-    transition: width 0.3s ease, left 0.3s ease;
+.body-paragraph {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 1.2rem;
 }
 
-.hover:hover::before {
-    width: 100%;
-}
-
-.hover:hover {
-    color: rgb(97, 120, 171);
-}
-
-.container {
-    width: 80%;
-    margin-top: 7em;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-header {
-    margin-bottom: 1.5em;
-}
-
-footer {
-    margin-top: 0.5em;
-}
-
-@media only screen and (max-width: 430px) {
-    header, footer {
-        font-size: small;
-    }
-
-    main {
-        font-size: x-small !important;
-    }
-}
-
-@media only screen and (min-width: 620px) {
-    .container {
-        width: 65%;
-    }
-
-    .gradient-title {
-        font-size: 65px;
-    }
-
-    .header .cut-size {
-        width: 10% !important;
-    }
-}
-
-@media only screen and (min-width: 768px) {
-    .container {
-        width: 55%;
-    }
-}
-
-@media only screen and (min-width: 995px) {
-    .container {
-        width: 45%;
-    }
-}
-
-@media only screen and (min-width: 1200px) {
-    .container {
-        width: 35%;
-    }
+.contact-links {
+  font-size: 1.3rem;
+  line-height: 1.6;
+  margin-top: 2rem;
+  color: rgb(97, 120, 171);
 }
 
 a {
-    display: inline-block;
-    text-decoration: none;
-    color: navy;
+  color: navy;
+  text-decoration: none;
+  font-weight: bold;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+a::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 2px;
+  background-color: rgb(97, 120, 171);
+  transition: width 0.3s ease, left 0.3s ease;
+}
+
+a:hover::before {
+  width: 100%;
+}
+
+a:hover {
+  color: rgb(97, 120, 171);
+}
+
+.contact-links a {
+  color: rgb(97, 120, 171);
+}
+
+@media (min-width: 768px) {
+  .title {
+    font-size: 4rem;
+  }
+  .body-paragraph {
+    font-size: 1.2rem;
+    line-height: 1.7;
+  }
+  .contact-links {
+    font-size: 1.4rem;
+  }
+  .content {
+    max-width: 700px;
+  }
+}
+
+@media (min-width: 600px) and (max-width: 767px) {
+  .title {
+    font-size: 4rem;
+  }
+  .content {
+    max-width: 650px;
+  }
+}
+
+@media (max-width: 599px) {
+  .wrapper {
+    padding: 1rem;
+  }
+  .title {
+    font-size: 3rem;
+  }
+  .body-paragraph {
+    font-size: 1rem;
+  }
+  .contact-links {
+    font-size: 1.2rem;
+  }
+  .content {
+    max-width: 500px;
+  }
+}
+
+@media (max-width: 480px) {
+  .wrapper {
+    padding: 0.8rem;
+  }
+  .title {
+    font-size: 2.5rem;
+  }
+  .body-paragraph {
+    font-size: 0.95rem;
+  }
+  .contact-links {
+    font-size: 1.1rem;
+  }
+  .content {
+    max-width: 400px;
+  }
+}
+
+@media (max-width: 360px) {
+  .wrapper {
+    padding: 0.5rem;
+  }
+  .title {
+    font-size: 2rem;
+  }
+  .body-paragraph {
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+  .contact-links {
+    font-size: 1rem;
+  }
+  .content {
+    max-width: 320px;
+  }
 }
